@@ -28,10 +28,17 @@
         
         public static string Run(int[][] maze , string[] solution)
         {
-            var startPointCord = FindStartCords(maze);
-            var nextPoint = GetValue(new int[] { startPointCord[0] + Directions[solution[0]][0] , startPointCord[1] + +Directions[solution[0]][1] }, maze);
-            
-            return string.Empty;
+            var currentPos = FindStartCords(maze);
+            var i = 0;
+            while (i<solution.Length)
+            {
+                currentPos = new int[] { currentPos[0] + Directions[solution[i]][0], currentPos[1] + +Directions[solution[i]][1] };
+                var currentPoint = GetValue(currentPos, maze);
+                if (currentPoint == 1) return "Dead";
+                if (currentPoint == 3) return "Finish";
+                i++;
+            }
+            return "Lost";
         }
     }
 }

@@ -2,12 +2,12 @@
 {
     public  class Runner
     {
-        public static Dictionary<string,int[]> Directions = new Dictionary<string, int[]>()
+        public static Dictionary<string,int[]> Directions = new ()
         {
-            { "N", new int[] { -1, 0 } },
+            { "N", new int[] { -1 , 0 } },
             { "S", new int[] { 1 , 0 } },
-            { "E", new int[] { 0, 1 } },
-            { "W", new int[] { 0, -1 } }
+            { "E", new int[] { 0 , 1 } },
+            { "W", new int[] { 0 , -1 } }
         };
         public static int[] FindStartCords(int[][] maze)
         {
